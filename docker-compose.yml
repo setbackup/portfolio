@@ -1,0 +1,16 @@
+version: '3.9'
+
+services :
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+
+    environment :
+      POSTGRES_USER: cloudass
+      POSTGRES_PASSWORD: cloudasso
+      POSTGRES_DB: cloudasso
+    volumes: 
+          - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
