@@ -49,10 +49,12 @@ const sendInscription = function defineSendInscription(){
         prenom : prenom_utilisateur.value,
         email : email_utilisateur.value,
         password : password_utilisateur.value,
-        nom_association : nom_association.value,
-        adresse_association : adress_association.value,
-        codePostal_association : codepostal_association.value,
-        ville_association : ville_association.value
+        association: {
+            nom : nom_association.value,
+            adresse : adress_association.value,
+            codePostal : codepostal_association.value,
+            ville : ville_association.value
+        }
     });
 
     axios.post('http://localhost:8080/inscription',bodyInscription, {

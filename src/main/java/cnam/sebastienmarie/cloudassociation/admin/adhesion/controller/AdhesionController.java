@@ -10,7 +10,7 @@ import cnam.sebastienmarie.cloudassociation.common.adhesion.dao.AdhesionDAO;
 import cnam.sebastienmarie.cloudassociation.common.adhesion.dto.AdhesionDTO;
 import jakarta.validation.Valid;
 
-@RestController
+@RestController("/admin/adhesion")
 public class AdhesionController {
 
       @Autowired

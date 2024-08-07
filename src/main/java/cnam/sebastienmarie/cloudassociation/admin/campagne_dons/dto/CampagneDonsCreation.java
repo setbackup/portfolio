@@ -9,7 +9,10 @@ public class CampagneDonsCreation {
    private String date_fin;
    private long objectif;
 
-   public CampagneDonsCreation(@JsonProperty("nom") String nom, @JsonProperty("date_debut") String date_debut, @JsonProperty("date_fin") String date_fin, @JsonProperty("objectif") long objectif) {
+   public CampagneDonsCreation(@JsonProperty("nom") String nom, 
+                                 @JsonProperty("date_debut") String date_debut, 
+                                 @JsonProperty("date_fin") String date_fin, 
+                                 @JsonProperty("objectif") long objectif) {
       this.nom = nom;
       this.date_debut = date_debut;
       this.date_fin = date_fin;

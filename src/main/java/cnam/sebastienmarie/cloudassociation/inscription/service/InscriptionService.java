@@ -37,11 +37,11 @@ public class InscriptionService {
                                 .toString()
                                 .substring(25, 36));
     
-        Associations a = new Associations(id_association.toUpperCase(), 
-                                            insRequest.getNom_association().toLowerCase(), 
-                                            insRequest.getAdresse_association().toLowerCase(), 
-                                            insRequest.getCodePostal_association(),
-                                            insRequest.getVille_association().toLowerCase());
+        /*Associations a = new Associations(id_association.toUpperCase(), 
+                                            insRequest.getAssociationDto().getNom().toLowerCase(), 
+                                            insRequest.getAssociationDto().getAdresse().toLowerCase(), 
+                                            insRequest.getAssociationDto().getCodePostal().toLowerCase(),
+                                            insRequest.getAssociationDto().getVille().toLowerCase());
 
         Users u = new Users(id_users.toUpperCase(), 
                             insRequest.getNom().toLowerCase(), 
@@ -51,7 +51,7 @@ public class InscriptionService {
                             a) ;
       
             associationDao.save(a);
-            usersDao.save(u);
+            usersDao.save(u);*/
         
         
     }

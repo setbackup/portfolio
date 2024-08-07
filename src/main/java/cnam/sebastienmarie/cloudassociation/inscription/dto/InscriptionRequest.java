@@ -2,6 +2,7 @@ package cnam.sebastienmarie.cloudassociation.inscription.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 
 
@@ -24,53 +25,37 @@ public class InscriptionRequest {
     @NotBlank(message = "Le password est vide")
     private String password;
 
-    @NotNull(message="Le nom de l'association n'est pas présent")
-    @NotBlank(message = "Le nom de l'association est vide")
-    private String nom_association;
-
-    @NotNull(message="L'adresse n'est pas présent")
-    @NotBlank(message = "L'adresse est vide")
-    private String adresse_association;
-
-    @NotNull(message="Le code postal n'est pas présent")
-    @NotBlank(message = "Le code postal est vide")
-    private String codePostal_association;
-
-    @NotNull(message="La ville n'est pas présent")
-    @NotBlank(message = "La ville est vide")
-    private String ville_association;
+   // @Valid
+   // @NotNull(message = "l'asociation doit être present.")
+   // private AssociationDTO associationDto;
    
     public InscriptionRequest(@JsonProperty("nom") String nom, 
                                 @JsonProperty("prenom") String prenom, 
                                 @JsonProperty("email") String email, 
-                                @JsonProperty("password") String password,
-                                @JsonProperty("nom_association") String nom_association, 
-                                @JsonProperty("adresse_association") String adresse_association,
-                                @JsonProperty("codePostal_association") String codePostal_association, 
-                                @JsonProperty("ville_association") String ville_association) {
+                                @JsonProperty("password") String passwor){
+                                //@JsonProperty("association") AssociationDTO associationDto) {
                                     
         
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.password = password;
-        this.nom_association = nom_association;
-        this.adresse_association = adresse_association;
-        this.codePostal_association = codePostal_association;
-        this.ville_association = ville_association;        
+        //this.associationDto = associationDto;
     }
 
     public String toString(){
         return "InscriptionRequest { \n"+
-            "nom='"+this.nom+"\',\n" +
-            "prenom='"+this.prenom+"\',\n" +
-            "email='"+this.email+"\',\n" +
-            "password='"+this.password+"\',\n" +
-            "nom_association='"+this.nom_association+"\',\n" +
-            "adresse_association='"+this.adresse_association+"\',\n" +
-            "codePostal_association='"+this.codePostal_association+"\',\n" +
-            "ville_association='"+this.ville_association+"\',\n" +
-        "}";
+            "nom: '"+this.nom+"\',\n" +
+            "prenom: '"+this.prenom+"\',\n" +
+            "email: '"+this.email+"\',\n" +
+            "password: '"+this.password+"\',\n" ;
+           /*  "association {"+
+                "\t nom: '"+this.associationDto.getNom()+"\',\n" +
+                "\t adresse: '"+this.associationDto.getAdresse()+"\',\n" +
+                "\t codePostal: '"+this.associationDto.getCodePostal()+"\',\n" +
+                "\t ville: '"+this.associationDto.getVille()+"\',\n" +
+            "}"+
+!        "}";*/
     }
 
     public String getNom() {
@@ -105,35 +90,12 @@ public class InscriptionRequest {
         this.password = password;
     }
 
-    public String getNom_association() {
-        return this.nom_association;
+    /* public AssociationDTO getAssociationDto() {
+        return this.associationDto;
     }
 
-    public void setNom_association(String nom_association) {
-        this.nom_association = nom_association;
-    }
-
-    public String getAdresse_association() {
-        return this.adresse_association;
-    }
-
-    public void setAdresse_association(String adresse_association) {
-        this.adresse_association = adresse_association;
-    }
-
-    public String getCodePostal_association() {
-        return this.codePostal_association;
-    }
-
-    public void setCodePostal_association(String codePostal_association) {
-        this.codePostal_association = codePostal_association;
-    }
-
-    public String getVille_association() {
-        return this.ville_association;
-    }
-
-    public void setVille_association(String ville_association) {
-        this.ville_association = ville_association;
-    }
+    public void setAssociationDto(AssociationDTO associationDto) {
+        this.associationDto = associationDto;
+    }*/
+    
 }
