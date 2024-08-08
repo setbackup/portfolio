@@ -25,22 +25,22 @@ public class InscriptionRequest {
     @NotBlank(message = "Le password est vide")
     private String password;
 
-   // @Valid
-   // @NotNull(message = "l'asociation doit être present.")
-   // private AssociationDTO associationDto;
+   @Valid
+   @NotNull(message = "l'asociation doit être present.")
+   private AssociationDTO associationDto;
    
     public InscriptionRequest(@JsonProperty("nom") String nom, 
                                 @JsonProperty("prenom") String prenom, 
                                 @JsonProperty("email") String email, 
-                                @JsonProperty("password") String passwor){
-                                //@JsonProperty("association") AssociationDTO associationDto) {
+                                @JsonProperty("password") String password,
+                                @JsonProperty("association") AssociationDTO associationDto) {
                                     
         
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.password = password;
-        //this.associationDto = associationDto;
+        this.associationDto = associationDto;
     }
 
     public String toString(){
@@ -48,14 +48,14 @@ public class InscriptionRequest {
             "nom: '"+this.nom+"\',\n" +
             "prenom: '"+this.prenom+"\',\n" +
             "email: '"+this.email+"\',\n" +
-            "password: '"+this.password+"\',\n" ;
-           /*  "association {"+
+            "password: '"+this.password+"\',\n" +
+             "association {"+
                 "\t nom: '"+this.associationDto.getNom()+"\',\n" +
                 "\t adresse: '"+this.associationDto.getAdresse()+"\',\n" +
                 "\t codePostal: '"+this.associationDto.getCodePostal()+"\',\n" +
                 "\t ville: '"+this.associationDto.getVille()+"\',\n" +
             "}"+
-!        "}";*/
+        "}";
     }
 
     public String getNom() {
@@ -90,12 +90,12 @@ public class InscriptionRequest {
         this.password = password;
     }
 
-    /* public AssociationDTO getAssociationDto() {
+    public AssociationDTO getAssociationDto() {
         return this.associationDto;
     }
 
     public void setAssociationDto(AssociationDTO associationDto) {
         this.associationDto = associationDto;
-    }*/
+    }
     
 }

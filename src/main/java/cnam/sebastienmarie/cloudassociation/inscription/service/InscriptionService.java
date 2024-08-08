@@ -37,7 +37,7 @@ public class InscriptionService {
                                 .toString()
                                 .substring(25, 36));
     
-        /*Associations a = new Associations(id_association.toUpperCase(), 
+        Associations a = new Associations(id_association.toUpperCase(), 
                                             insRequest.getAssociationDto().getNom().toLowerCase(), 
                                             insRequest.getAssociationDto().getAdresse().toLowerCase(), 
                                             insRequest.getAssociationDto().getCodePostal().toLowerCase(),
@@ -51,9 +51,7 @@ public class InscriptionService {
                             a) ;
       
             associationDao.save(a);
-            usersDao.save(u);*/
-        
-        
+            usersDao.save(u);
     }
 
 }
